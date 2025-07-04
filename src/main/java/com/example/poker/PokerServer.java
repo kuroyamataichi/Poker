@@ -78,7 +78,7 @@ public class PokerServer {
         }
 
         private void checkAndStartGame() {
-            // すべての登録者が接続したらゲーム開始
+            // 全員が接続したらゲーム開始
             if (clientNameMap.size() == playerNames.size()) {
                 System.out.println("全プレイヤー接続済み。ゲーム開始。");
 
@@ -99,10 +99,10 @@ public class PokerServer {
                     }
                 }
 
-                // テーブルカードを全員に送信
+                //カードを送信
                 broadcast("テーブルカード: " + poker.getTableCards());
 
-                // 勝者を評価して通知
+                // 勝者
                 try {
                     List<Poker.Player> winners = poker.evaluateHandsParallel();
                     StringBuilder winnerMsg = new StringBuilder("勝者: ");
